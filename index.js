@@ -1,13 +1,39 @@
-console.log('hello world')
-const persona = {
- name: 'gus'
+const crudList = (listaInicial = []) => {
+    let listaInterna = listaInicial;
 
+    const obtenerLista = () => listaInterna;
+    const agregarALista = (nuevo) => {
+        listaInterna = [...listaInterna, nuevo]
+    }
 
-const persona ={
-    name: 'frank'
+    return Object.freeze({
+        obtenerLista,
+        agregarALista
+    })
 }
-const frutas = ["Platano","Manzana","Uvas","Naranjas"];
 
-for(let i=0;i<frutas.length;i++){
-    console.log(frutas[i]);
+const perroList = crudList();
+
+
+const imagenPerro = () => {
+    return document.getElementById("imagenPerro").value;
+}
+
+const agregarPerro = document.getElementById("agregarPerro").addEventListener("click", () => {
+    const imagenDelPerro = imagenPerro()
+    perroList.agregarALista(imagenDelPerro);
+    render();
+})
+
+const render = () => {
+    let htmlConImagenes = ''
+    perroList.obtenerLista().forEach((perro) => {
+        htmlConImagenes += `
+     <img src="${perro}" />
+    `
+    })
+
+    const contenedor = document.getElementById("contenedor");
+
+    contenedor.innerHTML = htmlConImagenes;
 }

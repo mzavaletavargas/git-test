@@ -1,0 +1,19 @@
+{
+  "name": "test1",
+  "version": "0.0.1",
+  "description": "este paquete se encarga de mostrar la lista de perros",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mzavaletavargas/git-test.git"
+  },
+  "author": "Gustavo Zavaleta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mzavaletavargas/git-test/issues"
+  },
+  "homepage": "https://github.com/mzavaletavargas/git-test#readme"
+}
